@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import NodeList from './components/NodeList';
+import NodeForm from './components/nodeForm';
+import Nav from './components/Nav';
 
 class App extends Component {
   render() {
     return (
-      <div> 
-          <h3>Hello world</h3>
-          {this.props.dulieu}
+      <div>
+        <Nav />
+        <div className="container">
+          <div className="row">
+            <NodeList />
+            <NodeForm />
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    dulieu: state.numb
-  }
-}
 
-export default connect(mapStateToProps)(App) ;
+export default App;
